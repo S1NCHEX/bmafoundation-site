@@ -2,31 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BMA Foundation | Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>body{font-family:'Inter',sans-serif}</style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- NAVBAR (shared on every page) -->
-  <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | BMA Foundation</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>body{font-family:'Inter',sans-serif}</style>
-</head>
-<body class="bg-white text-gray-800">
+  <!-- 🌐 NAVBAR -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="BMA Foundation Logo" class="h-16 w-auto"/>
-        <span class="text-2xl font-bold text-blue-600">BMA Foundation</span>
+        <img src="assets/logo.png" alt="BMA Foundation Logo" class="h-16 w-auto" />
+        <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
       </div>
-      <nav class="space-x-6 text-gray-700 font-medium">
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav id="nav-menu" class="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="projects.html" class="hover:text-blue-600">Projects</a>
+        <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+    <!-- mobile nav -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <nav class="flex flex-col space-y-2 text-gray-700 font-medium">
         <a href="index.html" class="text-blue-600 font-semibold">Home</a>
         <a href="about.html" class="hover:text-blue-600">About</a>
         <a href="projects.html" class="hover:text-blue-600">Projects</a>
@@ -35,47 +40,68 @@
       </nav>
     </div>
   </header>
-    <!-- Mobile links -->
-    <nav id="mobile-links" class="md:hidden hidden bg-white border-t py-4 space-y-2 px-6 text-gray-700 font-medium">
-      <a href="index.html" class="block hover:text-blue-600">Home</a>
-      <a href="about.html" class="block hover:text-blue-600">About</a>
-      <a href="projects.html" class="block hover:text-blue-600">Projects</a>
-      <a href="get-involved.html" class="block hover:text-blue-600">Get Involved</a>
-      <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-    </nav>
-  </header>
 
-  <!-- HERO -->
-  <section class="bg-blue-50 py-20 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Empowering Change, One Step at a Time</h1>
-      <p class="text-lg text-gray-600 mb-6">We are medical students from Tbilisi State Medical University organizing creative events and volunteer actions to uplift Georgian communities.</p>
+  <!-- 🌟 HERO -->
+  <section class="bg-blue-50 py-16 sm:py-24 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Empowering Change, One Step at a Time</h1>
+      <p class="text-base sm:text-lg text-gray-700 mb-6">We are medical students organising creative events and volunteer actions to uplift Georgian communities.</p>
       <a href="get-involved.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Join Us</a>
     </div>
   </section>
 
-  <!-- IMPACT -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
-      <div>
-        <h3 class="text-4xl font-bold text-blue-600">150+</h3>
-        <p class="mt-2 text-gray-600">Volunteers engaged</p>
+  <!-- 📊 IMPACT STATS -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+      <div><h3 class="text-4xl font-bold text-blue-600">150+</h3><p class="mt-1 text-gray-600">Volunteers</p></div>
+      <div><h3 class="text-4xl font-bold text-blue-600">₾40K</h3><p class="mt-1 text-gray-600">Funds Raised</p></div>
+      <div><h3 class="text-4xl font-bold text-blue-600">25</h3><p class="mt-1 text-gray-600">Events Hosted</p></div>
+    </div>
+  </section>
+
+  <!-- 🏆 FEATURED PROJECTS PREVIEW -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10">Recent Highlights</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"><h3 class="font-semibold text-lg mb-2">Winter Warmth Drive</h3><p class="text-gray-600">Coats, food, & essentials for 100+ families.</p></div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"><h3 class="font-semibold text-lg mb-2">Art Auction</h3><p class="text-gray-600">₾15K raised for pediatric surgeries.</p></div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"><h3 class="font-semibold text-lg mb-2">Blood Donation Campaign</h3><p class="text-gray-600">30% boost in local hospital donations.</p></div>
       </div>
-      <div>
-        <h3 class="text-4xl font-bold text-blue-600">₾40K</h3>
-        <p class="mt-2 text-gray-600">Funds raised for medical cases</p>
-      </div>
-      <div>
-        <h3 class="text-4xl font-bold text-blue-600">25</h3>
-        <p class="mt-2 text-gray-600">Community events hosted</p>
+      <div class="text-center mt-10">
+        <a href="projects.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">See All Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
-    © 2025 BMA Foundation. All rights reserved.
-  </footer>
+  <!-- 💬 TESTIMONIALS -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-10">What People Say</h2>
+      <div class="space-y-10">
+        <blockquote class="relative bg-blue-50 p-6 rounded-xl shadow">
+          <p class="text-gray-700 italic">“Volunteering with BMA opened my eyes to how much small actions matter.”</p>
+          <footer class="mt-4 font-semibold text-blue-700">— Lika, Medical Student</footer>
+        </blockquote>
+        <blockquote class="relative bg-blue-50 p-6 rounded-xl shadow">
+          <p class="text-gray-700 italic">“Their Art Auction literally saved my daughter’s life.”</p>
+          <footer class="mt-4 font-semibold text-blue-700">— Nino, Parent</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✉️ CTA -->
+  <section class="bg-blue-600 py-16 text-center text-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
+      <p class="mb-6 text-base sm:text-lg">Join our community of volunteers, donors, and advocates today.</p>
+      <a href="get-involved.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Get Involved</a>
+    </div>
+  </section>
+
+  <!-- 🔚 FOOTER -->
+  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">© 2025 BMA Foundation. All rights reserved.</footer>
 
   <script src="assets/script.js"></script>
 </body>

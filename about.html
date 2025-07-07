@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | BMA Foundation</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>body{font-family:'Inter',sans-serif}</style>
 </head>
 <body class="bg-white text-gray-800">
+  <!-- 🌐 NAVBAR (same as index.html) -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="BMA Foundation Logo" class="h-16 w-auto"/>
-        <span class="text-2xl font-bold text-blue-600">BMA Foundation</span>
+        <img src="assets/logo.png" alt="BMA Foundation Logo" class="h-16 w-auto" />
+        <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
       </div>
-      <nav class="space-x-6 text-gray-700 font-medium">
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <nav id="nav-menu" class="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-blue-600 font-semibold">About</a>
+        <a href="projects.html" class="hover:text-blue-600">Projects</a>
+        <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <nav class="flex flex-col space-y-2 text-gray-700 font-medium">
         <a href="index.html" class="hover:text-blue-600">Home</a>
         <a href="about.html" class="text-blue-600 font-semibold">About</a>
         <a href="projects.html" class="hover:text-blue-600">Projects</a>
@@ -25,75 +37,53 @@
       </nav>
     </div>
   </header>
-  <!-- Include the same NAVBAR code as in index.html -->
 
-  <!-- ========== ABOUT HERO ========== -->
-  <section class="bg-gradient-to-br from-blue-50 to-white py-20">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-blue-700 mb-4">Our Mission</h1>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        Founded by medical students from Tbilisi State Medical University, the BMA Foundation transforms knowledge into meaningful action — through engaging events.
-      </p>
+  <!-- 🧬 ABOUT SECTION -->
+  <section class="bg-blue-50 py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Our Story</h1>
+      <p class="text-lg text-gray-700">Founded in 2024 by aspiring doctors at Tbilisi State Medical University, BMA Foundation was born out of the belief that medicine is more than science — it's service.</p>
     </div>
   </section>
 
-  <!-- ========== CORE VALUES ========== -->
   <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
-      <div>
-        <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M13 16h-1v-4h-1m1-4h.01M12 17h.01M4 6h16M4 10h16M4 14h16M4 18h16"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800">Transparency</h3>
-        <p class="text-gray-600 mt-2">Every lari raised is publicly accounted for — always.</p>
-      </div>
-      <div>
-        <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M9 17v-4a3 3 0 016 0v4M5 13h14M12 7h.01"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800">Creativity</h3>
-        <p class="text-gray-600 mt-2">We engage the community to raise funds and awareness in unforgettable ways.</p>
-      </div>
-      <div>
-        <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M17 9V7a4 4 0 00-8 0v2m0 0a4 4 0 018 0v6m-8-6v6M7 16h10"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800">Community</h3>
-        <p class="text-gray-600 mt-2">Every event we run strengthens bonds, raises community awareness and uplifts lives.</p>
-      </div>
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
+      <p class="text-gray-700 text-lg leading-relaxed">From our very first coat drive to art auctions and blood donation campaigns, we've turned creativity into action — raising awareness and resources for real people facing real needs.</p>
+      <p class="text-gray-700 text-lg leading-relaxed">Every decision we make is grounded in transparency, fueled by student energy, and aimed at long-term community upliftment.</p>
     </div>
   </section>
 
-  <!-- ========== TIMELINE ========== -->
-  <section class="bg-gray-50 py-20">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Milestones</h2>
-      <div class="relative border-l-4 border-blue-200 pl-6 space-y-8">
+  <!-- 🎯 CORE VALUES -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">Our Core Values</h2>
+      <div class="grid md:grid-cols-3 gap-10 text-center">
         <div>
-          <h4 class="text-xl font-semibold text-blue-700">2024</h4>
-          <p class="text-gray-700">First "Winter Warmth Drive" reaches over 100 families in need.</p>
+          <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 17h.01M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">Transparency</h3>
+          <p class="text-gray-600 mt-2">Every lari is publicly accounted for — always.</p>
         </div>
         <div>
-          <h4 class="text-xl font-semibold text-blue-700">2025</h4>
-          <p class="text-gray-700">Art Auction raises ₾15,000 for pediatric surgeries.</p>
+          <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-4a3 3 0 016 0v4M5 13h14M12 7h.01"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">Creativity</h3>
+          <p class="text-gray-600 mt-2">We blend art, science and empathy to reach hearts and raise hope.</p>
         </div>
         <div>
-          <h4 class="text-xl font-semibold text-blue-700">2025</h4>
-          <p class="text-gray-700">Launched our first blood donation campaign — increased hospital donations by 30%.</p>
+          <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 9V7a4 4 0 00-8 0v2m0 0a4 4 0 018 0v6m-8-6v6M7 16h10"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">Community</h3>
+          <p class="text-gray-600 mt-2">We collaborate with local voices and uplift together.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER same as index.html -->
+  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">© 2025 BMA Foundation. All rights reserved.</footer>
+  <script src="assets/script.js"></script>
 </body>
 </html>

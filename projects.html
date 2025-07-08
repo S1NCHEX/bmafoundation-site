@@ -8,12 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
- <!-- ✅ Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
   <style>body{font-family:'Inter',sans-serif}</style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- 🌐 NAVBAR (same as index.html) -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3"><img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/><span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span></div>
@@ -37,7 +35,6 @@
     </div>
   </header>
 
-  <!-- 🎉 PROJECTS HERO -->
   <section class="bg-blue-50 py-16 text-center">
     <div class="max-w-4xl mx-auto px-4">
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">Projects & Events</h1>
@@ -45,7 +42,6 @@
     </div>
   </section>
 
-  <!-- 🔍 FILTER BUTTONS -->
   <section class="py-8 bg-white">
     <div class="max-w-4xl mx-auto px-4 flex flex-wrap gap-3 justify-center">
       <button data-filter="all" class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">All</button>
@@ -55,39 +51,32 @@
     </div>
   </section>
 
-  <!-- 🗂 PROJECTS GRID -->
   <section class="pb-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" id="projects-grid">
-      <!-- sample cards -->
-      <div class="project-card fundraiser bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">Winter Warmth Drive</h3>
-        <p class="text-gray-600 mb-3">Coats, food, & essentials for 100+ families.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
-      </div>
-      <div class="project-card fundraiser bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">Student Art Auction</h3>
-        <p class="text-gray-600 mb-3">₾15K raised for pediatric surgeries.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
-      </div>
       <div class="project-card volunteer bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">Blood Donation Campaign</h3>
-        <p class="text-gray-600 mb-3">30% boost in hospital donations.</p>
+        <h3 class="font-semibold text-lg mb-2">Cards for Hospitalized Kids</h3>
+        <p class="text-gray-600 mb-3">Our volunteers create handmade, uplifting cards for children with chronic illnesses to brighten their days.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
       </div>
       <div class="project-card awareness bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">Mental Health Webinar</h3>
-        <p class="text-gray-600 mb-3">Free online session for 200+ students.</p>
+        <h3 class="font-semibold text-lg mb-2">Wellness Wall</h3>
+        <p class="text-gray-600 mb-3">Students post anonymous messages of encouragement to foster a supportive mental health environment on campus.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Awareness</span>
       </div>
-      <div class="project-card volunteer bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">Community Clean‑Up</h3>
-        <p class="text-gray-600 mb-3">Collected 500kg of waste in one morning.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
+      <div class="project-card fundraiser bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Winter Donation Drive</h3>
+        <p class="text-gray-600 mb-3">We collect winter essentials — coats, blankets, and more — for families in need during the coldest months.</p>
+        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
       </div>
       <div class="project-card fundraiser bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">Charity Quiz Night</h3>
-        <p class="text-gray-600 mb-3">Raised ₾8K for medical supplies.</p>
+        <h3 class="font-semibold text-lg mb-2">Charity Talent Show</h3>
+        <p class="text-gray-600 mb-3">An evening of talent and purpose. All entry fees directly support our selected causes.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
+      </div>
+      <div class="project-card volunteer bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Clothing Donation Drive</h3>
+        <p class="text-gray-600 mb-3">We collect gently used clothing from students to donate to shelters and low-income families.</p>
+        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
       </div>
     </div>
   </section>

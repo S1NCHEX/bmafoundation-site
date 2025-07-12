@@ -1,6 +1,6 @@
-// Mobile navbar toggle
+// Mobile Navbar toggle
 const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('mobile-links');
+const navLinks = document.getElementById('mobile-menu');  // <-- match this ID to your HTML
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener('click', () => {

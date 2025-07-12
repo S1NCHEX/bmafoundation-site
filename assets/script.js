@@ -1,10 +1,13 @@
 // Mobile navbar toggle
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('mobile-links');
-if(menuToggle){
-  menuToggle.addEventListener('click', ()=>{
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('hidden');
   });
+} else {
+  console.warn('Menu toggle or nav links element not found on this page.');
 }
 
 // Projects page filter

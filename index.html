@@ -49,13 +49,15 @@
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Empowering Change, One Step at a Time</h1>
       <p class="text-base sm:text-lg text-gray-700 mb-6">Medical Students trying to create meaningful impact by uplifting communities through transparent giving and volunteering action.</p>
 
- <!-- Local/hosted video file -->
+    <!-- Optimized video -->
     <video 
-      class="w-full rounded-xl mb-6 shadow-lg" 
-      controls 
-      preload="metadata" 
-      poster="thumbnail.jpg"> <!-- optional thumbnail -->
-      <source src="videos/your-video.mp4" type="video/mp4">
+      class="w-full rounded-xl mb-6 shadow-lg"
+      controls
+      preload="none"
+      playsinline
+      loading="lazy"
+      poster="assets/videos/thumbnail.jpg"> <!-- Optional poster image -->
+      <source src="assets/videos/your-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 

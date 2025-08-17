@@ -4,34 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | BMA Foundation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
-  <style>body{font-family:'Inter',sans-serif}</style>
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <style>
+    body {font-family:'Inter',sans-serif}
+    .fade-in {opacity:0; transform:translateY(20px); transition:all 0.8s ease-in-out}
+    .fade-in.show {opacity:1; transform:translateY(0)}
+  </style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- 🌐 NAVBAR (same as index.html) -->
+  <!-- NAVBAR -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <img src="assets/logo.png" alt="BMA Foundation Logo" class="h-10 w-auto" />
         <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
       </div>
-      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <button id="menu-toggle" class="md:hidden text-gray-700"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <nav id="nav-menu" class="hidden md:flex space-x-6 text-gray-700 font-medium">
-        <a href="index.html" class="hover:text-blue-600">Home</a>
-        <a href="about.html" class="text-blue-600 font-semibold">About</a>
-        <a href="projects.html" class="hover:text-blue-600">Projects</a>
-        <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
-        <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-      <nav class="flex flex-col space-y-2 text-gray-700 font-medium">
         <a href="index.html" class="hover:text-blue-600">Home</a>
         <a href="about.html" class="text-blue-600 font-semibold">About</a>
         <a href="projects.html" class="hover:text-blue-600">Projects</a>
@@ -41,52 +32,93 @@
     </div>
   </header>
 
-  <!-- 🧬 ABOUT SECTION -->
-  <section class="bg-blue-50 py-16 text-center">
-    <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Our Story</h1>
-      <p class="text-lg text-gray-700">Founded in 2025 by aspiring doctors at Tbilisi State Medical University, BMA Foundation was born out of the belief that medicine is more than science — it's service.</p>
+  <!-- HERO -->
+  <section class="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style="background-image:url('assets/hero-bg.jpg')">
+    <div class="absolute inset-0 bg-blue-900 bg-opacity-50"></div>
+    <div class="relative text-center text-white px-6">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Our Story</h1>
+      <p class="text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp">Founded in 2025 by aspiring doctors at Tbilisi State Medical University, BMA Foundation was born out of the belief that medicine is more than science — it's service.</p>
     </div>
   </section>
 
-  <section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4 space-y-8">
-      <p class="text-gray-700 text-lg leading-relaxed">We've turned creativity into action — raising awareness and resources for real people facing real needs.</p>
-      <p class="text-gray-700 text-lg leading-relaxed">Every decision we make is grounded in transparency, fueled by student energy, and aimed at long-term community upliftment.</p>
+  <!-- MISSION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 space-y-8 fade-in">
+      <p class="text-gray-700 text-xl leading-relaxed text-center">We've turned creativity into action — raising awareness and resources for real people facing real needs.</p>
+      <p class="text-gray-700 text-xl leading-relaxed text-center">Every decision we make is grounded in transparency, fueled by student energy, and aimed at long-term community upliftment.</p>
     </div>
   </section>
 
-  <!-- 🎯 CORE VALUES -->
-  <section class="bg-gray-50 py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">Our Core Values</h2>
-      <div class="grid md:grid-cols-3 gap-10 text-center">
-        <div>
-          <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 17h.01M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Transparency</h3>
-          <p class="text-gray-600 mt-2">Every donation is publicly accounted for — always.</p>
+  <!-- TIMELINE -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Journey</h2>
+      <div class="relative border-l-4 border-blue-600 pl-6 space-y-12">
+        <div class="fade-in">
+          <h3 class="text-xl font-semibold">2025 – Foundation Begins</h3>
+          <p class="text-gray-600">Medical students came together to merge science with service, starting our first community events.</p>
         </div>
-        <div>
-          <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-4a3 3 0 016 0v4M5 13h14M12 7h.01"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Creativity</h3>
-          <p class="text-gray-600 mt-2">address social, medical, and emotional challenges through creative action.</p>
+        <div class="fade-in">
+          <h3 class="text-xl font-semibold">2025 – First Fundraiser</h3>
+          <p class="text-gray-600">We launched creative events that combined art, music, and service, raising funds transparently.</p>
         </div>
-        <div>
-          <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 9V7a4 4 0 00-8 0v2m0 0a4 4 0 018 0v6m-8-6v6M7 16h10"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Community</h3>
-          <p class="text-gray-600 mt-2">We collaborate with local voices and uplift together.</p>
+        <div class="fade-in">
+          <h3 class="text-xl font-semibold">Future – Scaling Impact</h3>
+          <p class="text-gray-600">Expanding partnerships with communities and creating sustainable change projects.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CORE VALUES -->
+  <section class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Core Values</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="p-8 rounded-2xl bg-blue-50 shadow hover:shadow-lg transition-transform transform hover:-translate-y-2 fade-in text-center">
+          <h3 class="text-xl font-semibold mb-3">Transparency</h3>
+          <p class="text-gray-600">Every donation is publicly accounted for — always.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-blue-50 shadow hover:shadow-lg transition-transform transform hover:-translate-y-2 fade-in text-center">
+          <h3 class="text-xl font-semibold mb-3">Creativity</h3>
+          <p class="text-gray-600">We address social, medical, and emotional challenges through creative action.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-blue-50 shadow hover:shadow-lg transition-transform transform hover:-translate-y-2 fade-in text-center">
+          <h3 class="text-xl font-semibold mb-3">Community</h3>
+          <p class="text-gray-600">We collaborate with local voices and uplift together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-16 text-center text-white">
+    <h2 class="text-3xl font-bold mb-4">Join Us in Making a Difference</h2>
+    <p class="max-w-xl mx-auto mb-6">Together, we can turn compassion into impact. Be part of our journey today.</p>
+    <a href="get-involved.html" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">Get Involved</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">© 2025 BMA Foundation. All rights reserved.</footer>
-  <script src="assets/script.js"></script>
+
+  <script>
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click',()=>{
+      document.getElementById('nav-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>

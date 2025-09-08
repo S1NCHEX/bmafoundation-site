@@ -9,13 +9,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
-  <style>body{font-family:'Inter',sans-serif}</style>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3"><img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/><span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span></div>
-      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
+        <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
       <nav id="nav-menu" class="hidden md:flex space-x-6 text-gray-700 font-medium">
         <a href="index.html" class="hover:text-blue-600">Home</a>
         <a href="about.html" class="hover:text-blue-600">About</a>
@@ -42,46 +60,95 @@
     </div>
   </section>
 
+  <!-- Filters -->
   <section class="py-8 bg-white">
     <div class="max-w-4xl mx-auto px-4 flex flex-wrap gap-3 justify-center">
-      <button data-filter="all" class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">All</button>
-      <button data-filter="fundraiser" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-sm font-semibold">Fundraisers</button>
-      <button data-filter="volunteer" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-sm font-semibold">Volunteering</button>
-      <button data-filter="awareness" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-sm font-semibold">Awareness</button>
+      <button data-filter="all" class="filter-btn bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow hover:opacity-90">All</button>
+      <button data-filter="fundraiser" class="filter-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-100">Fundraisers</button>
+      <button data-filter="volunteer" class="filter-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-100">Volunteering</button>
+      <button data-filter="awareness" class="filter-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-100">Awareness</button>
     </div>
   </section>
 
+  <!-- Projects -->
   <section class="pb-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" id="projects-grid">
-      <div class="project-card volunteer bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      
+      <a href="project-cards.html" class="project-card volunteer fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
         <h3 class="font-semibold text-lg mb-2">Cards for Hospitalized Kids</h3>
         <p class="text-gray-600 mb-3">Our volunteers create handmade, uplifting cards for children with chronic illnesses to brighten their days.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
-      </div>
-      <div class="project-card awareness bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      </a>
+
+      <a href="project-wellness-wall.html" class="project-card awareness fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
         <h3 class="font-semibold text-lg mb-2">Wellness Wall</h3>
         <p class="text-gray-600 mb-3">Students post anonymous messages of encouragement to foster a supportive mental health environment on campus.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Awareness</span>
-      </div>
-      <div class="project-card fundraiser bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      </a>
+
+      <a href="project-winter-drive.html" class="project-card fundraiser fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
         <h3 class="font-semibold text-lg mb-2">Winter Donation Drive</h3>
         <p class="text-gray-600 mb-3">We collect winter essentials — coats, blankets, and more — for families in need during the coldest months.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
-      </div>
-      <div class="project-card fundraiser bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      </a>
+
+      <a href="project-talent-show.html" class="project-card fundraiser fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
         <h3 class="font-semibold text-lg mb-2">Charity Talent Show</h3>
         <p class="text-gray-600 mb-3">An evening of talent and purpose. All entry fees directly support our selected causes.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
-      </div>
-      <div class="project-card volunteer bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      </a>
+
+      <a href="project-clothing-drive.html" class="project-card volunteer fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
         <h3 class="font-semibold text-lg mb-2">Clothing Donation Drive</h3>
         <p class="text-gray-600 mb-3">We collect gently used clothing from students to donate to shelters and low-income families.</p>
         <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
-      </div>
+      </a>
+      
     </div>
   </section>
 
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">© 2025 BMA Foundation. All rights reserved.</footer>
-  <script src="assets/script.js"></script>
+  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
+    © 2025 BMA Foundation. All rights reserved.
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Fade-in effect on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fade => observer.observe(fade));
+
+    // Project filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => b.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-blue-500', 'text-white', 'shadow'));
+        btn.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-500', 'text-white', 'shadow');
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.classList.contains(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -11,18 +11,12 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gradient-to-b from-white via-blue-50 to-gray-100 text-gray-800">
+  <!-- HEADER -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -53,15 +47,17 @@
     </div>
   </header>
 
-  <section class="bg-blue-50 py-16 text-center">
-    <div class="max-w-4xl mx-auto px-4">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Projects & Events</h1>
-      <p class="text-base sm:text-lg text-gray-700">Explore our fundraising campaigns, volunteer missions, and creative community events.</p>
+  <!-- HERO -->
+  <section class="relative bg-gradient-to-r from-blue-600 to-blue-400 text-white py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('assets/pattern.svg')] opacity-10"></div>
+    <div class="relative max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Projects & Events</h1>
+      <p class="text-lg sm:text-xl opacity-90">Explore our fundraising campaigns, volunteer missions, and creative community events that make a difference.</p>
     </div>
   </section>
 
-  <!-- Filters -->
-  <section class="py-8 bg-white">
+  <!-- FILTERS -->
+  <section class="py-12 bg-white shadow-sm">
     <div class="max-w-4xl mx-auto px-4 flex flex-wrap gap-3 justify-center">
       <button data-filter="all" class="filter-btn bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow hover:opacity-90">All</button>
       <button data-filter="fundraiser" class="filter-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-100">Fundraisers</button>
@@ -70,40 +66,71 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="pb-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" id="projects-grid">
+  <!-- PROJECTS GRID -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 grid gap-10 sm:grid-cols-2 lg:grid-cols-3" id="projects-grid">
       
-      <a href="project-cards.html" class="project-card volunteer fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
-        <h3 class="font-semibold text-lg mb-2">Cards for Hospitalized Kids</h3>
-        <p class="text-gray-600 mb-3">Our volunteers create handmade, uplifting cards for children with chronic illnesses to brighten their days.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
+      <!-- Card with image -->
+      <a href="project-cards.html" class="project-card volunteer fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+        <img src="assets/project1.jpg" alt="Cards for Kids" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 group-hover:opacity-100 transition"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <h3 class="font-bold text-lg">Cards for Hospitalized Kids</h3>
+          <p class="text-sm opacity-90">Uplifting handmade cards for children with chronic illnesses.</p>
+          <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
+        </div>
       </a>
 
-      <a href="project-wellness-wall.html" class="project-card awareness fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
-        <h3 class="font-semibold text-lg mb-2">Wellness Wall</h3>
-        <p class="text-gray-600 mb-3">Students post anonymous messages of encouragement to foster a supportive mental health environment on campus.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Awareness</span>
+      <a href="project-wellness-wall.html" class="project-card awareness fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+        <img src="assets/project2.jpg" alt="Wellness Wall" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <h3 class="font-bold text-lg">Wellness Wall</h3>
+          <p class="text-sm opacity-90">Anonymous encouragement for mental health on campus.</p>
+          <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Awareness</span>
+        </div>
       </a>
 
-      <a href="project-winter-drive.html" class="project-card fundraiser fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
-        <h3 class="font-semibold text-lg mb-2">Winter Donation Drive</h3>
-        <p class="text-gray-600 mb-3">We collect winter essentials — coats, blankets, and more — for families in need during the coldest months.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
+      <a href="project-winter-drive.html" class="project-card fundraiser fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+        <img src="assets/project3.jpg" alt="Winter Drive" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <h3 class="font-bold text-lg">Winter Donation Drive</h3>
+          <p class="text-sm opacity-90">Providing coats, blankets, and essentials to families in need.</p>
+          <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
+        </div>
       </a>
 
-      <a href="project-talent-show.html" class="project-card fundraiser fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
-        <h3 class="font-semibold text-lg mb-2">Charity Talent Show</h3>
-        <p class="text-gray-600 mb-3">An evening of talent and purpose. All entry fees directly support our selected causes.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
+      <a href="project-talent-show.html" class="project-card fundraiser fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+        <img src="assets/project4.jpg" alt="Talent Show" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <h3 class="font-bold text-lg">Charity Talent Show</h3>
+          <p class="text-sm opacity-90">An evening of talent where entry fees fund our causes.</p>
+          <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Fundraiser</span>
+        </div>
       </a>
 
-      <a href="project-clothing-drive.html" class="project-card volunteer fade-in bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transition transform duration-300 block">
-        <h3 class="font-semibold text-lg mb-2">Clothing Donation Drive</h3>
-        <p class="text-gray-600 mb-3">We collect gently used clothing from students to donate to shelters and low-income families.</p>
-        <span class="inline-block text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
+      <a href="project-clothing-drive.html" class="project-card volunteer fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+        <img src="assets/project5.jpg" alt="Clothing Drive" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <h3 class="font-bold text-lg">Clothing Donation Drive</h3>
+          <p class="text-sm opacity-90">Collecting gently used clothing for shelters & families.</p>
+          <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
+        </div>
       </a>
-      
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="relative bg-blue-600 text-white py-20 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('assets/pattern.svg')] opacity-10"></div>
+    <div class="relative max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Want to get involved?</h2>
+      <p class="mb-6 text-lg opacity-90">Join us in making an impact through volunteering, donations, or spreading awareness.</p>
+      <a href="get-involved.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-100 transition">Get Involved</a>
     </div>
   </section>
 
@@ -117,7 +144,7 @@
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
-    // Fade-in effect on scroll
+    // Fade-in effect
     const faders = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -127,7 +154,6 @@
         }
       });
     }, { threshold: 0.1 });
-
     faders.forEach(fade => observer.observe(fade));
 
     // Project filter
@@ -139,7 +165,6 @@
         const filter = btn.getAttribute('data-filter');
         filterBtns.forEach(b => b.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-blue-500', 'text-white', 'shadow'));
         btn.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-500', 'text-white', 'shadow');
-
         cards.forEach(card => {
           if (filter === 'all' || card.classList.contains(filter)) {
             card.style.display = 'block';

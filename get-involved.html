@@ -18,7 +18,7 @@
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- 🌐 NAVBAR -->
+  <!-- NAVBAR -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -49,7 +49,7 @@
     </div>
   </header>
 
-  <!-- 🙌 HERO -->
+  <!-- HERO -->
   <section class="bg-blue-50 py-20 text-center fade-in">
     <div class="max-w-3xl mx-auto px-4">
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">Get Involved</h1>
@@ -58,7 +58,7 @@
     </div>
   </section>
 
-  <!-- 🌟 WAYS TO HELP -->
+  <!-- WAYS TO HELP -->
   <section class="py-20 bg-white fade-in">
     <div class="max-w-6xl mx-auto px-4 grid gap-12 md:grid-cols-3 text-center">
       <div class="card-hover p-6 rounded-lg bg-blue-50 fade-in">
@@ -91,26 +91,25 @@
     </div>
   </section>
 
-<!-- 📝 LIVE PLEDGE WALL -->
-<section id="pledge-wall" class="bg-gray-50 py-20 fade-in">
-  <div class="max-w-5xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-6">Join the Movement: Make Your Pledge</h2>
-    <p class="text-gray-600 mb-8">Your action counts! Add your pledge and see it appear live for everyone.</p>
+  <!-- LIVE PLEDGE WALL -->
+  <section id="pledge-wall" class="bg-gray-50 py-20 fade-in">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Join the Movement: Make Your Pledge</h2>
+      <p class="text-gray-600 mb-8">Your action counts! Add your pledge and see it appear live for everyone.</p>
 
-    <!-- Pledge Form -->
-    <div class="mb-12">
-      <input id="pledge-input" type="text" placeholder="I pledge to..." class="w-full sm:w-2/3 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4">
-      <button id="pledge-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Add Pledge</button>
+      <!-- Pledge Form -->
+      <div class="mb-6">
+        <input id="pledge-input" type="text" placeholder="I pledge to..." class="w-full sm:w-2/3 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4">
+        <button id="pledge-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Add Pledge</button>
+      </div>
+
+      <!-- Fallback / Pledge Display -->
+      <div id="pledge-display" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4"></div>
+      <p id="fallback-msg" class="text-gray-500">Loading pledges…</p>
     </div>
+  </section>
 
-    <!-- Wall Display -->
-    <div id="pledge-display" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <div id="fallback-msg" class="text-gray-500 italic col-span-full">Loading pledges...</div>
-    </div>
-  </div>
-</section>
-
-  <!-- 🔗 CALL TO ACTION -->
+  <!-- CALL TO ACTION -->
   <section class="bg-blue-600 text-white py-20 text-center fade-in">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
@@ -119,7 +118,7 @@
     </div>
   </section>
 
-  <!-- 🔚 FOOTER -->
+  <!-- FOOTER -->
   <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
     © 2025 BMA Foundation ·
     <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> ·
@@ -130,75 +129,88 @@
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
 
-<script>
-  // Fade-in on scroll
-  const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = { threshold: 0.2 };
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, appearOptions);
-  faders.forEach(fader => { appearOnScroll.observe(fader); });
-
-  // Mobile menu toggle
-  document.getElementById('menu-toggle').addEventListener('click',()=>{
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-  });
-
-  const pledgeDisplay = document.getElementById('pledge-display');
-  const fallbackMsg = document.getElementById('fallback-msg');
-
-  try {
-    const app = firebase.initializeApp({
-      apiKey: "AIzaSyD4Qj6NqdCI4xFvgI9WRio9-uZ_K0oB5Xw",
-      authDomain: "bma-pledge-wall.firebaseapp.com",
-      projectId: "bma-pledge-wall",
-      storageBucket: "bma-pledge-wall.firebasestorage.app",
-      messagingSenderId: "489225297862",
-      appId: "1:489225297862:web:7473344cad2892adb95cc7",
-      measurementId: "G-6Y58S815HF"
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click',()=>{
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
-    const db = firebase.database();
-    const pledgeBtn = document.getElementById('pledge-btn');
+    // Firebase compat setup
+    const pledgeDisplay = document.getElementById('pledge-display');
+    const fallbackMsg = document.getElementById('fallback-msg');
     const pledgeInput = document.getElementById('pledge-input');
+    const pledgeBtn = document.getElementById('pledge-btn');
 
-    pledgeBtn.addEventListener('click', () => {
-      const text = pledgeInput.value.trim();
-      if (!text) return;
-      db.ref('pledges').push({ text: text, timestamp: Date.now() })
-        .catch(err => console.error("Failed to add pledge:", err));
-      pledgeInput.value = '';
-    });
+    try {
+      firebase.initializeApp({
+        apiKey: "AIzaSyD4Qj6NqdCI4xFvgI9WRio9-uZ_K0oB5Xw",
+        authDomain: "bma-pledge-wall.firebaseapp.com",
+        databaseURL: "https://bma-pledge-wall-default-rtdb.firebaseio.com",
+        projectId: "bma-pledge-wall",
+        storageBucket: "bma-pledge-wall.firebasestorage.app",
+        messagingSenderId: "489225297862",
+        appId: "1:489225297862:web:7473344cad2892adb95cc7",
+        measurementId: "G-6Y58S815HF"
+      });
 
-    pledgeInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') pledgeBtn.click();
-    });
+      const db = firebase.database();
 
-    // Listen for pledges
-    db.ref('pledges').orderByChild('timestamp').on('child_added', snapshot => {
-      try {
+      // Load existing pledges once
+      db.ref('pledges').once('value', snapshot => {
         const data = snapshot.val();
-        if (!data || !data.text) return;
+        if(data){
+          Object.values(data).forEach(item => {
+            if(!item.text) return;
+            const card = document.createElement('div');
+            card.className = "bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-gray-800 fade-in show";
+            card.textContent = item.text;
+            pledgeDisplay.prepend(card);
+          });
+          fallbackMsg.style.display = 'none';
+        } else {
+          fallbackMsg.textContent = "No pledges yet. Be the first!";
+        }
+      });
+
+      // Listen for new pledges
+      db.ref('pledges').orderByChild('timestamp').on('child_added', snapshot => {
+        const data = snapshot.val();
+        if(!data || !data.text) return;
         const card = document.createElement('div');
         card.className = "bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-gray-800 fade-in show";
         card.textContent = data.text;
         pledgeDisplay.prepend(card);
+        fallbackMsg.style.display = 'none';
+      });
 
-        // Remove fallback message once at least one pledge loads
-        if(fallbackMsg) fallbackMsg.style.display = 'none';
-      } catch(err) {
-        console.error("Failed to render pledge:", err);
-      }
-    });
+      // Add new pledge
+      pledgeBtn.addEventListener('click', () => {
+        const text = pledgeInput.value.trim();
+        if (!text) return;
+        db.ref('pledges').push({ text: text, timestamp: Date.now() });
+        pledgeInput.value = '';
+      });
 
-  } catch(err) {
-    console.error("Firebase failed to initialize:", err);
-    if(fallbackMsg) fallbackMsg.textContent = "Unable to load pledges. Please try again later.";
-  }
-</script>
+      pledgeInput.addEventListener('keypress', e => {
+        if(e.key === 'Enter') pledgeBtn.click();
+      });
 
+    } catch(err){
+      console.error("Firebase failed:", err);
+      if(fallbackMsg) fallbackMsg.textContent = "Unable to load pledges. Please try again later.";
+    }
+
+    // Scroll fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(f => observer.observe(f));
+  </script>
+</body>
+</html>

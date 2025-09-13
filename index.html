@@ -14,11 +14,19 @@
   </style>
 </head>
 <body class="bg-white text-gray-800">
+  
   <!-- 🌐 NAVBAR -->
-<header class="bg-white shadow sticky top-0 z-50">
+  <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3"><img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/><span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span></div>
-      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
+        <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
       <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
         <a href="index.html" class="text-blue-600 font-semibold">Home</a>
         <a href="about.html" class="hover:text-blue-600">About</a>
@@ -43,63 +51,98 @@
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
       <source src="assets/videos/bmafoundationsoon.mp4" type="video/mp4">
     </video>
-    <div class="absolute inset-0 bg-blue-900 bg-opacity-60"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-blue-900/40"></div>
     <div class="relative z-10 max-w-3xl px-6 text-white fade-in">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Empowering Change, One Step at a Time</h1>
       <p class="text-lg sm:text-xl mb-6">Medical Students creating meaningful impact by uplifting communities through transparent giving and volunteering.</p>
-      <a href="get-involved.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Join Us</a>
+      <a href="get-involved.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transform transition">Join Us</a>
+    </div>
+    <!-- scroll cue -->
+    <div class="absolute bottom-6 text-white animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
     </div>
   </section>
 
   <!-- 📊 IMPACT STATS -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
-      <div>
+  <section class="py-20 bg-white fade-in">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+      <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+        <div class="text-blue-600 mb-2">
+          <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-3-3h-2"/></svg>
+        </div>
         <h3 class="text-5xl font-bold text-blue-600 counter" data-target="50">0</h3>
         <p class="mt-2 text-gray-600">Volunteers</p>
       </div>
-      <div>
+      <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+        <div class="text-blue-600 mb-2">
+          <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c1.5 0 3 1.5 3 3s-1.5 3-3 3-3-1.5-3-3 1.5-3 3-3z"/></svg>
+        </div>
         <h3 class="text-5xl font-bold text-blue-600 counter" data-target="100">₾0K</h3>
         <p class="mt-2 text-gray-600">Funds Raised</p>
       </div>
-      <div>
+      <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+        <div class="text-blue-600 mb-2">
+          <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3"/></svg>
+        </div>
         <h3 class="text-5xl font-bold text-blue-600 counter" data-target="10">0</h3>
         <p class="mt-2 text-gray-600">Events Hosted</p>
       </div>
     </div>
   </section>
 
- <!-- 🏆 FEATURED PROJECTS PREVIEW -->
-<section class="bg-gray-50 py-20">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-10">Recent Highlights</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <blockquote class="instagram-media transform hover:scale-105 transition duration-300" data-instgrm-permalink="https://www.instagram.com/p/DL9y96aIuuA/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; max-width:540px; width:100%; aspect-ratio:1/1;"></blockquote>
+  <!-- 🏆 FEATURED PROJECTS PREVIEW -->
+  <section class="bg-gray-50 py-20 fade-in">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-10">Recent Highlights</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Instagram embed -->
+        <blockquote class="instagram-media transform hover:scale-105 transition duration-300 rounded-xl overflow-hidden shadow" data-instgrm-permalink="https://www.instagram.com/p/DL9y96aIuuA/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; max-width:540px; width:100%; aspect-ratio:1/1;"></blockquote>
+        <!-- Static card as backup -->
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col justify-center">
+          <h3 class="font-semibold text-lg mb-2">Community Drive</h3>
+          <p class="text-gray-600">Medical supplies distributed to underserved areas with student volunteers.</p>
+        </div>
+      </div>
+      <script async src="//www.instagram.com/embed.js"></script>
     </div>
-    <script async src="//www.instagram.com/embed.js"></script>
-  </div>
-</section>
+  </section>
 
   <!-- 💬 TESTIMONIALS -->
   <section class="py-20 bg-white fade-in">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-10">What People Say</h2>
-      <p class="text-gray-600 text-lg">Coming soon...</p>
+      <div class="p-6 bg-gray-50 rounded-xl shadow text-gray-600 italic">
+        <p>“Stories from our volunteers and partners will appear here soon.”</p>
+      </div>
     </div>
   </section>
 
   <!-- ✉️ CTA -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-20 text-center text-white">
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-20 text-center text-white fade-in">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
       <p class="mb-6 text-lg">Join our community of volunteers, donors, and advocates today.</p>
-      <a href="get-involved.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Get Involved</a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="get-involved.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transform transition">Get Involved</a>
+        <a href="donate.html" class="inline-block bg-blue-100 text-white border border-white px-6 py-3 rounded-full font-semibold hover:bg-blue-200 hover:text-blue-800 transition">Donate</a>
+      </div>
     </div>
   </section>
 
   <!-- 🔚 FOOTER -->
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">© 2025 BMA Foundation. All rights reserved.</footer>
+  <footer class="bg-gray-50 border-t py-8 text-center text-sm text-gray-600 fade-in">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+      <p>© 2025 BMA Foundation. All rights reserved.</p>
+      <div class="flex gap-4 mt-4 sm:mt-0">
+        <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="hover:text-blue-600">Instagram</a>
+        <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="hover:text-blue-600">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 
+  <!-- JS -->
   <script>
     // Mobile menu toggle
     document.getElementById('menu-toggle').addEventListener('click',()=>{

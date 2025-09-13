@@ -131,18 +131,27 @@
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
 
   <script>
-    // Firebase config
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "SENDER_ID",
-      appId: "APP_ID"
+      apiKey: "AIzaSyD4Qj6NqdCI4xFvgI9WRio9-uZ_K0oB5Xw",
+      authDomain: "bma-pledge-wall.firebaseapp.com",
+      projectId: "bma-pledge-wall",
+      storageBucket: "bma-pledge-wall.firebasestorage.app",
+      messagingSenderId: "489225297862",
+      appId: "1:489225297862:web:7473344cad2892adb95cc7",
+      measurementId: "G-6Y58S815HF"
     };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
 
     // Pledge functionality
     const pledgeBtn = document.getElementById('pledge-btn');

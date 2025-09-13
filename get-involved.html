@@ -4,20 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Get Involved | BMA Foundation</title>
+  
+  <!-- ✅ Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
- <!-- ✅ Favicon -->
+  
+  <!-- ✅ Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
-  <style>body{font-family:'Inter',sans-serif}</style>
+
+  <!-- ✅ Fade-in Animations -->
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- 🌐 NAVBAR (same as index.html) -->
+
+  <!-- 🌐 NAVBAR -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3"><img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/><span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span></div>
-      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
+        <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
       <nav id="nav-menu" class="hidden md:flex space-x-6 text-gray-700 font-medium">
         <a href="index.html" class="hover:text-blue-600">Home</a>
         <a href="about.html" class="hover:text-blue-600">About</a>
@@ -37,52 +54,92 @@
     </div>
   </header>
 
-  <!-- 🙌 JOIN SECTION -->
-  <section class="bg-blue-50 py-16 text-center">
+  <!-- 🙌 HERO -->
+  <section class="bg-blue-50 py-20 text-center fade-in">
     <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Get Involved</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Get Involved</h1>
       <p class="text-lg text-gray-700">Whether you’re a student, donor, or local advocate — there’s a place for you in our mission.</p>
     </div>
   </section>
 
   <!-- 💡 WAYS TO HELP -->
-  <section class="py-16 bg-white">
+  <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 grid gap-12 md:grid-cols-3 text-center">
-      <div>
-        <div class="w-14 h-14 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center"><svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+      
+      <!-- Volunteer -->
+      <div class="fade-in">
+        <div class="w-16 h-16 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Volunteer</h3>
         <p class="text-gray-600">Join our events, campaigns, or logistics team — even a few hours make a difference.</p>
       </div>
-      <div>
-        <div class="w-14 h-14 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center"><svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c1.5 0 3 1.5 3 3s-1.5 3-3 3-3-1.5-3-3 1.5-3 3-3zm0 13c-2.7-1.3-5-4.5-5-8h10c0 3.5-2.3 6.7-5 8z"/></svg></div>
+
+      <!-- Donate -->
+      <div class="fade-in">
+        <div class="w-16 h-16 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 8c1.5 0 3 1.5 3 3s-1.5 3-3 3-3-1.5-3-3 1.5-3 3-3zm0 13c-2.7-1.3-5-4.5-5-8h10c0 3.5-2.3 6.7-5 8z"/>
+          </svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Donate</h3>
         <p class="text-gray-600">Help us fund urgent surgeries, winter supplies, and educational materials.</p>
       </div>
-      <div>
-        <div class="w-14 h-14 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center"><svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+
+      <!-- Partner -->
+      <div class="fade-in">
+        <div class="w-16 h-16 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Partner</h3>
         <p class="text-gray-600">Sponsor an event, co-host a drive, or amplify our reach through your network.</p>
       </div>
+
     </div>
   </section>
 
-<!-- 🔗 CALL TO ACTION -->
-<section class="bg-blue-600 text-white py-16 text-center">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-4">Want to Join Our Mission?</h2>
-    <p class="text-lg mb-6">Contribute to our student-led projects and help improve lives across communities.</p>
-    <a href="https://forms.gle/t2NkfvJQkQ2XP8Qv9" target="_blank" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
-      Fill Out the Form
-    </a>
-  </div>
-</section>
+  <!-- 🔗 CALL TO ACTION -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 text-center fade-in">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Want to Join Our Mission?</h2>
+      <p class="text-lg mb-6">Contribute to our student-led projects and help improve lives across communities.</p>
+      <a href="https://forms.gle/t2NkfvJQkQ2XP8Qv9" target="_blank" 
+         class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        Fill Out the Form
+      </a>
+    </div>
+  </section>
 
+  <!-- 🔚 FOOTER -->
   <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
-    © 2025 BMA Foundation ·
-    <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> ·
+    © 2025 BMA Foundation · 
+    <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> · 
     <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
   </footer>
 
-  <script src="assets/script.js"></script>
+  <!-- ✅ JS for Menu + Fade-in -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 </body>
 </html>

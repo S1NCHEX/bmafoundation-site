@@ -91,24 +91,24 @@
     </div>
   </section>
 
-  <!-- 📝 LIVE PLEDGE WALL -->
-  <section id="pledge-wall" class="bg-gray-50 py-20 fade-in">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Join the Movement: Make Your Pledge</h2>
-      <p class="text-gray-600 mb-8">Your action counts! Add your pledge and see it appear live for everyone.</p>
+<!-- 📝 LIVE PLEDGE WALL -->
+<section id="pledge-wall" class="bg-gray-50 py-20 fade-in">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6">Join the Movement: Make Your Pledge</h2>
+    <p class="text-gray-600 mb-8">Your action counts! Add your pledge and see it appear live for everyone.</p>
 
-      <!-- Pledge Form -->
-      <div class="mb-12">
-        <input id="pledge-input" type="text" placeholder="I pledge to..." class="w-full sm:w-2/3 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4">
-        <button id="pledge-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Add Pledge</button>
-      </div>
-
-      <!-- Wall Display -->
-      <div id="pledge-display" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <!-- Pledges appear here -->
-      </div>
+    <!-- Pledge Form -->
+    <div class="mb-12">
+      <input id="pledge-input" type="text" placeholder="I pledge to..." class="w-full sm:w-2/3 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4">
+      <button id="pledge-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Add Pledge</button>
     </div>
-  </section>
+
+    <!-- Wall Display -->
+    <div id="pledge-display" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div id="fallback-msg" class="text-gray-500 italic col-span-full">Loading pledges...</div>
+    </div>
+  </div>
+</section>
 
   <!-- 🔗 CALL TO ACTION -->
   <section class="bg-blue-600 text-white py-20 text-center fade-in">
@@ -130,8 +130,8 @@
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
 
-  <script>
-  // Fade-in on scroll function (runs regardless of Firebase)
+<script>
+  // Fade-in on scroll
   const faders = document.querySelectorAll('.fade-in');
   const appearOptions = { threshold: 0.2 };
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -149,7 +149,9 @@
     document.getElementById('mobile-menu').classList.toggle('hidden');
   });
 
-  // Firebase-related code wrapped in try/catch
+  const pledgeDisplay = document.getElementById('pledge-display');
+  const fallbackMsg = document.getElementById('fallback-msg');
+
   try {
     const app = firebase.initializeApp({
       apiKey: "AIzaSyD4Qj6NqdCI4xFvgI9WRio9-uZ_K0oB5Xw",
@@ -161,11 +163,9 @@
       measurementId: "G-6Y58S815HF"
     });
 
-    const db = firebase.database(); // Pledge database
-
+    const db = firebase.database();
     const pledgeBtn = document.getElementById('pledge-btn');
     const pledgeInput = document.getElementById('pledge-input');
-    const pledgeDisplay = document.getElementById('pledge-display');
 
     pledgeBtn.addEventListener('click', () => {
       const text = pledgeInput.value.trim();
@@ -179,6 +179,7 @@
       if (e.key === 'Enter') pledgeBtn.click();
     });
 
+    // Listen for pledges
     db.ref('pledges').orderByChild('timestamp').on('child_added', snapshot => {
       try {
         const data = snapshot.val();
@@ -187,6 +188,9 @@
         card.className = "bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-gray-800 fade-in show";
         card.textContent = data.text;
         pledgeDisplay.prepend(card);
+
+        // Remove fallback message once at least one pledge loads
+        if(fallbackMsg) fallbackMsg.style.display = 'none';
       } catch(err) {
         console.error("Failed to render pledge:", err);
       }
@@ -194,5 +198,7 @@
 
   } catch(err) {
     console.error("Firebase failed to initialize:", err);
+    if(fallbackMsg) fallbackMsg.textContent = "Unable to load pledges. Please try again later.";
   }
 </script>
+

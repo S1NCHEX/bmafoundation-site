@@ -113,44 +113,41 @@
   <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
 
     <!-- Volunteers -->
-    <div class="p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-      <div class="text-blue-600 mb-4">
-        <!-- Solid Users Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M13 7a3 3 0 11-6 0 3 3 0 016 0zM2 14a6 6 0 0112 0H2z"/>
-          <path d="M14 14a6 6 0 0112 0H14z"/>
-        </svg>
-      </div>
-      <h3 class="text-5xl font-bold text-blue-600 counter" data-target="50">0</h3>
-      <p class="mt-2 text-gray-600 font-medium">Volunteers</p>
+    <div class="relative p-10 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-2">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-30 animate-gradient-x -z-10"></div>
+      <h3 class="text-6xl font-extrabold text-blue-700 counter" data-target="50">0</h3>
+      <p class="mt-2 text-gray-700 uppercase tracking-wider font-semibold">Volunteers</p>
     </div>
 
     <!-- Funds Raised -->
-    <div class="p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-      <div class="text-blue-600 mb-4">
-        <!-- Solid Currency / Coin Stack -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11V5a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V9h2a1 1 0 100-2h-2z"/>
-        </svg>
-      </div>
-      <h3 class="text-5xl font-bold text-blue-600 counter" data-target="100">₾0K</h3>
-      <p class="mt-2 text-gray-600 font-medium">Funds Raised</p>
+    <div class="relative p-10 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-2">
+      <div class="absolute inset-0 bg-gradient-to-r from-green-400 via-green-500 to-green-600 opacity-30 animate-gradient-x -z-10"></div>
+      <h3 class="text-6xl font-extrabold text-green-700 counter" data-target="100">₾0K</h3>
+      <p class="mt-2 text-gray-700 uppercase tracking-wider font-semibold">Funds Raised</p>
     </div>
 
     <!-- Events Hosted -->
-    <div class="p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-      <div class="text-blue-600 mb-4">
-        <!-- Solid Calendar Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M6 2a1 1 0 100 2h1v1a1 1 0 102 0V4h2v1a1 1 0 102 0V4h1a1 1 0 100-2H6zM4 7h12v11H4V7z"/>
-        </svg>
-      </div>
-      <h3 class="text-5xl font-bold text-blue-600 counter" data-target="10">0</h3>
-      <p class="mt-2 text-gray-600 font-medium">Events Hosted</p>
+    <div class="relative p-10 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-2">
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 opacity-30 animate-gradient-x -z-10"></div>
+      <h3 class="text-6xl font-extrabold text-purple-700 counter" data-target="10">0</h3>
+      <p class="mt-2 text-gray-700 uppercase tracking-wider font-semibold">Events Hosted</p>
     </div>
 
   </div>
 </section>
+
+<style>
+  /* Gradient animation */
+  @keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 5s ease infinite;
+  }
+</style>
 
   <!-- 🏆 FEATURED PROJECTS PREVIEW -->
   <section class="bg-gray-50 py-20 fade-in">

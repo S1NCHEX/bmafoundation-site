@@ -4,16 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Get Involved | BMA Foundation</title>
+
+  <!-- ✅ Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
+
+  <!-- ✅ Custom Styles -->
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .fade-in { opacity:0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
-    .fade-in.show { opacity:1; transform: translateY(0); }
-    .card-hover:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.1); transition: all 0.3s ease-in-out; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
   </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -50,163 +57,106 @@
   </header>
 
   <!-- 🙌 HERO -->
-  <section class="bg-blue-50 py-20 text-center fade-in">
-    <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Get Involved</h1>
-      <p class="text-lg text-gray-700 mb-6">Whether you’re a student, donor, or local advocate — there’s a place for you in our mission. Take action and make a difference today!</p>
-      <a href="#pledge-wall" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Make a Pledge</a>
+  <section class="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[url('assets/pattern.png')] bg-cover"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 fade-in">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Get Involved</h1>
+      <p class="text-lg sm:text-xl mb-6">Be part of something bigger — together, we can create lasting change in our communities.</p>
+      <a href="#ways" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Explore Ways to Help</a>
     </div>
   </section>
 
-  <!-- 🌟 WAYS TO HELP -->
+  <!-- 💡 WAYS TO HELP -->
   <section class="py-20 bg-white fade-in">
-    <div class="max-w-6xl mx-auto px-4 grid gap-12 md:grid-cols-3 text-center">
-      <div class="card-hover p-6 rounded-lg bg-blue-50 fade-in">
-        <div class="w-16 h-16 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
-          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">Volunteer</h3>
-        <p class="text-gray-600">Bring your skills, time, and heart — whether it’s at events, campaigns, or behind the scenes.</p>
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+    
+    <!-- Volunteers -->
+    <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4">
+        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m4-6a4 4 0 11-8 0 4 4 0 018 0zm10 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
       </div>
-      <div class="card-hover p-6 rounded-lg bg-blue-50 fade-in">
-        <div class="w-16 h-16 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
-          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 8c1.5 0 3 1.5 3 3s-1.5 3-3 3-3-1.5-3-3 1.5-3 3-3zm0 13c-2.7-1.3-5-4.5-5-8h10c0 3.5-2.3 6.7-5 8z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">Donate</h3>
-        <p class="text-gray-600">Fuel our initiatives — from funding urgent medical needs to educational programs.</p>
-      </div>
-      <div class="card-hover p-6 rounded-lg bg-blue-50 fade-in">
-        <div class="w-16 h-16 mb-4 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
-          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">Partner</h3>
-        <p class="text-gray-600">Collaborate with us — sponsor events, co-host drives, or amplify our reach through your network.</p>
-      </div>
+      <h3 class="text-5xl font-bold text-blue-600 counter" data-target="50">0</h3>
+      <p class="mt-2 text-gray-600">Volunteers</p>
     </div>
-  </section>
 
-  <!-- 📝 LIVE PLEDGE WALL -->
-  <section id="pledge-wall" class="bg-gray-50 py-20 fade-in">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Join the Movement: Make Your Pledge</h2>
-      <p class="text-gray-600 mb-8">Your action counts! Add your pledge and see it appear live for everyone.</p>
-
-      <!-- Pledge Form -->
-      <div class="mb-4">
-        <input id="pledge-input" type="text" placeholder="I pledge to..." class="w-full sm:w-2/3 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4">
-        <button id="pledge-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Add Pledge</button>
+    <!-- Funds Raised -->
+    <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4">
+        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 1.343-3 3v1H7a1 1 0 000 2h2v1c0 1.657 1.343 3 3 3h0c1.657 0 3-1.343 3-3v-1h2a1 1 0 000-2h-2v-1c0-1.657-1.343-3-3-3z"/>
+        </svg>
       </div>
+      <h3 class="text-5xl font-bold text-blue-600 counter" data-target="100">₾0K</h3>
+      <p class="mt-2 text-gray-600">Funds Raised</p>
+    </div>
 
-      <p id="fallback-msg" class="text-gray-500 mb-4">Loading pledges...</p>
-
-      <!-- Wall Display -->
-      <div id="pledge-display" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <!-- Pledges appear here -->
+    <!-- Events Hosted -->
+    <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4">
+        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
       </div>
+      <h3 class="text-5xl font-bold text-blue-600 counter" data-target="10">0</h3>
+      <p class="mt-2 text-gray-600">Events Hosted</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- 🌟 IMPACT STORY -->
+  <section class="bg-gray-50 py-20 text-center fade-in">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6">Your Impact in Action</h2>
+      <blockquote class="italic text-lg text-gray-700 mb-6"> 
+        "Thanks to the BMA Foundation’s support, my family received winter essentials when we needed them most.  
+        It gave us not only warmth, but hope." 
+      </blockquote>
+      <p class="font-semibold text-blue-600">— Mariam, Community Member</p>
     </div>
   </section>
 
   <!-- 🔗 CALL TO ACTION -->
-  <section class="bg-blue-600 text-white py-20 text-center fade-in">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
-      <p class="mb-6 text-lg">Join our community of volunteers, donors, and advocates today.</p>
-      <a href="get-involved.html#pledge-wall" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Get Involved</a>
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 text-center fade-in">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Want to Join Our Mission?</h2>
+      <p class="text-lg mb-6">Every action counts. Together, we can transform lives and uplift entire communities.</p>
+      <a href="https://forms.gle/t2NkfvJQkQ2XP8Qv9" target="_blank" 
+         class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        Fill Out the Form
+      </a>
     </div>
   </section>
 
   <!-- 🔚 FOOTER -->
   <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
-    © 2025 BMA Foundation ·
-    <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> ·
+    © 2025 BMA Foundation · 
+    <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> · 
     <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
   </footer>
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
-
+  <!-- ✅ JS for Menu + Fade-in -->
   <script>
-    // Initialize Firebase
-    const firebaseConfig = {
-      apiKey: "AIzaSyD4Qj6NqdCI4xFvgI9WRio9-uZ_K0oB5Xw",
-      authDomain: "bma-pledge-wall.firebaseapp.com",
-      databaseURL: "https://bma-pledge-wall-default-rtdb.firebaseio.com",
-      projectId: "bma-pledge-wall",
-      storageBucket: "bma-pledge-wall.firebasestorage.app",
-      messagingSenderId: "489225297862",
-      appId: "1:489225297862:web:7473344cad2892adb95cc7",
-      measurementId: "G-6Y58S815HF"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
-
-    const pledgeDisplay = document.getElementById('pledge-display');
-    const fallbackMsg = document.getElementById('fallback-msg');
-    const pledgeInput = document.getElementById('pledge-input');
-    const pledgeBtn = document.getElementById('pledge-btn');
-
-    // Load pledges
-    db.ref('pledges').once('value', snapshot => {
-      const data = snapshot.val();
-      if(data){
-        Object.values(data).forEach(item => {
-          const card = document.createElement('div');
-          card.className = "bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-gray-800 fade-in show";
-          card.textContent = item.text;
-          pledgeDisplay.prepend(card);
-        });
-        fallbackMsg.style.display = 'none';
-      } else {
-        fallbackMsg.textContent = "No pledges yet. Be the first!";
-      }
-    });
-
-    // Listen for new pledges in real-time
-    db.ref('pledges').orderByChild('timestamp').on('child_added', snapshot => {
-      const data = snapshot.val();
-      if(!data) return;
-      const card = document.createElement('div');
-      card.className = "bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-gray-800 fade-in show";
-      card.textContent = data.text;
-      pledgeDisplay.prepend(card);
-      fallbackMsg.style.display = 'none';
-    });
-
-    // Add new pledge
-    pledgeBtn.addEventListener('click', () => {
-      const text = pledgeInput.value.trim();
-      if(!text) return;
-      db.ref('pledges').push({ text: text, timestamp: Date.now() });
-      pledgeInput.value = '';
-    });
-
-    pledgeInput.addEventListener('keypress', e => {
-      if(e.key === 'Enter') pledgeBtn.click();
-    });
-
-    // Scroll fade-in
-    const faders = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    faders.forEach(f => observer.observe(f));
-
     // Mobile menu toggle
     document.getElementById('menu-toggle').addEventListener('click', () => {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
 </body>
 </html>

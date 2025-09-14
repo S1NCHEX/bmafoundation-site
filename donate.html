@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate | BMA Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body { font-family:'Inter',sans-serif; }
+    .fade-in { opacity:0; transform:translateY(20px); transition: all 0.8s ease-in-out; }
+    .fade-in.show { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+<!-- 🌐 GLOBAL NAVBAR -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
+      <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-6 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-blue-600 relative group">Home</a>
+      <a href="about.html" class="hover:text-blue-600 relative group">About</a>
+      <a href="projects.html" class="hover:text-blue-600 relative group">Projects</a>
+      <a href="get-involved.html" class="hover:text-blue-600 relative group">Get Involved</a>
+      <a href="donate.html" class="hover:text-blue-600 relative group font-semibold text-blue-600">Donate</a>
+      <a href="contact.html" class="hover:text-blue-600 relative group">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white border-t shadow">
+    <nav class="flex flex-col space-y-3 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="projects.html" class="hover:text-blue-600">Projects</a>
+      <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
+      <a href="donate.html" class="hover:text-blue-600 font-semibold text-blue-600">Donate</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO / COMING SOON -->
+<section class="min-h-screen flex items-center justify-center text-center fade-in">
+  <div class="px-6">
+    <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-blue-600">Donate</h1>
+    <p class="text-lg text-gray-700 max-w-xl mx-auto">Our donation page is coming soon! Stay tuned for ways to support our mission and make a meaningful impact.</p>
+    <a href="get-involved.html" class="mt-6 inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Get Involved Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t py-6 text-center text-sm text-gray-500 fade-in">
+  © 2025 BMA Foundation ·
+  <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> ·
+  <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // Mobile menu toggle
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+
+  // Highlight active nav link
+  const links = document.querySelectorAll('header nav a');
+  links.forEach(link => {
+    if(link.href === window.location.href){
+      link.classList.add("text-blue-600","font-semibold");
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -15,36 +15,79 @@
 </head>
 <body class="bg-white text-gray-800">
   
-  <!-- 🌐 NAVBAR -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
-        <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
-      </div>
-      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-      <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
-        <a href="index.html" class="text-blue-600 font-semibold">Home</a>
-        <a href="about.html" class="hover:text-blue-600">About</a>
-        <a href="projects.html" class="hover:text-blue-600">Projects</a>
-        <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
-        <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-      <nav class="flex flex-col space-y-2 text-gray-700 font-medium">
-        <a href="index.html" class="text-blue-600 font-semibold">Home</a>
-        <a href="about.html" class="hover:text-blue-600">About</a>
-        <a href="projects.html" class="hover:text-blue-600">Projects</a>
-        <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
-        <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- 🌐 GLOBAL NAVBAR -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    
+    <!-- 🔹 Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
+      <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
+    </a>
+
+    <!-- 🔹 Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-6 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-blue-600 relative group">
+        Home
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="about.html" class="hover:text-blue-600 relative group">
+        About
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="projects.html" class="hover:text-blue-600 relative group">
+        Projects
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="get-involved.html" class="hover:text-blue-600 relative group">
+        Get Involved
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="donate.html" class="hover:text-blue-600 relative group">
+        Donate
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="contact.html" class="hover:text-blue-600 relative group">
+        Contact
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+    </nav>
+
+    <!-- 🔹 Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- 🔹 Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white border-t shadow">
+    <nav class="flex flex-col space-y-3 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="projects.html" class="hover:text-blue-600">Projects</a>
+      <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
+      <a href="donate.html" class="hover:text-blue-600">Donate</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ✅ Navbar Script -->
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+
+  // Highlight active link automatically
+  const links = document.querySelectorAll('header nav a');
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add("text-blue-600", "font-semibold");
+    }
+  });
+</script>
 
   <!-- 🌟 HERO -->
   <section class="relative min-h-screen py-20 flex items-center justify-center text-center overflow-hidden">

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
- <!-- ✅ Favicon -->
+  <!-- ✅ Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
   <style>body{font-family:'Inter',sans-serif}</style>
 </head>
@@ -72,21 +72,6 @@
   </div>
 </header>
 
-<!-- ✅ Navbar Script -->
-<script>
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-  });
-
-  // Highlight active link automatically
-  const links = document.querySelectorAll('header nav a');
-  links.forEach(link => {
-    if (link.href === window.location.href) {
-      link.classList.add("text-blue-600", "font-semibold");
-    }
-  });
-</script>
-
   <!-- CONTACT FORM -->
   <section class="max-w-2xl mx-auto px-4 py-20">
     <h1 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Get in Touch</h1>
@@ -114,6 +99,20 @@
     <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
   </footer>
 
-  <script src="assets/script.js"></script>
+  <!-- ✅ Inline Script -->
+  <script>
+    // ✅ Mobile Menu Toggle
+    document.getElementById('menu-toggle')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.toggle('hidden');
+    });
+
+    // ✅ Highlight Active Nav Link
+    const links = document.querySelectorAll('header nav a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("text-blue-600", "font-semibold");
+      }
+    });
+  </script>
 </body>
 </html>

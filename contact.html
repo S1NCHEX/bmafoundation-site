@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,59 +8,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- ✅ Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
-  <style>body{font-family:'Inter',sans-serif}</style>
+  <style>
+    body{font-family:'Inter',sans-serif;}
+    .fade-in {opacity:0; transform:translateY(20px); transition:all 0.8s ease-in-out;}
+    .fade-in.show {opacity:1; transform:translateY(0);}
+  </style>
 </head>
 <body class="bg-white text-gray-800">
-  
-<!-- 🌐 GLOBAL NAVBAR -->
+
+<!-- 🌐 NAVBAR -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    
-    <!-- 🔹 Logo -->
     <a href="index.html" class="flex items-center gap-3">
       <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
       <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
     </a>
-
-    <!-- 🔹 Desktop Menu -->
     <nav class="hidden md:flex items-center gap-6 text-gray-700 font-medium">
-      <a href="index.html" class="hover:text-blue-600 relative group">
-        Home
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="about.html" class="hover:text-blue-600 relative group">
-        About
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="projects.html" class="hover:text-blue-600 relative group">
-        Projects
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="get-involved.html" class="hover:text-blue-600 relative group">
-        Get Involved
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="donate.html" class="hover:text-blue-600 relative group">
-        Donate
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="contact.html" class="hover:text-blue-600 relative group">
-        Contact
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
+      <a href="index.html" class="hover:text-blue-600 relative group"><span>Home</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="about.html" class="hover:text-blue-600 relative group"><span>About</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="projects.html" class="hover:text-blue-600 relative group"><span>Projects</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="get-involved.html" class="hover:text-blue-600 relative group"><span>Get Involved</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="donate.html" class="hover:text-blue-600 relative group"><span>Donate</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="contact.html" class="hover:text-blue-600 relative group"><span>Contact</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span></a>
     </nav>
-
-    <!-- 🔹 Mobile Menu Button -->
     <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
       <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
   </div>
-
-  <!-- 🔹 Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white border-t shadow">
     <nav class="flex flex-col space-y-3 text-gray-700 font-medium">
       <a href="index.html" class="hover:text-blue-600">Home</a>
@@ -72,47 +50,66 @@
   </div>
 </header>
 
-  <!-- CONTACT FORM -->
-  <section class="max-w-2xl mx-auto px-4 py-20">
-    <h1 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Get in Touch</h1>
-    <form action="https://formsubmit.co/info@bma-foundation.org" method="POST" class="space-y-4">
+<!-- 🌟 CONTACT HERO -->
+<section class="relative min-h-[40vh] flex items-center justify-center text-center bg-gradient-to-r from-blue-600 to-blue-800 fade-in">
+  <h1 class="text-4xl sm:text-5xl font-bold text-white">Get in Touch</h1>
+  <p class="mt-4 text-lg text-white/90">We’d love to hear from you — reach out with questions, ideas, or just to say hi!</p>
+</section>
+
+<!-- 💌 CONTACT FORM -->
+<section class="max-w-2xl mx-auto px-4 py-20 fade-in">
+  <div class="bg-white shadow-lg rounded-2xl p-10">
+    <form action="https://formsubmit.co/info@bma-foundation.org" method="POST" class="space-y-6">
       <input type="hidden" name="_subject" value="New message from BMA Foundation site" />
-      <input type="text" name="name" placeholder="Name" required class="w-full border rounded p-3" />
-      <input type="email" name="email" placeholder="Email" required class="w-full border rounded p-3" />
-      <textarea name="message" rows="5" placeholder="Your message" required class="w-full border rounded p-3"></textarea>
-      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700 transition">Send Message</button>
+      <input type="text" name="name" placeholder="Name" required class="w-full border rounded-xl p-4 focus:ring-2 focus:ring-blue-600 focus:outline-none"/>
+      <input type="email" name="email" placeholder="Email" required class="w-full border rounded-xl p-4 focus:ring-2 focus:ring-blue-600 focus:outline-none"/>
+      <textarea name="message" rows="5" placeholder="Your message" required class="w-full border rounded-xl p-4 focus:ring-2 focus:ring-blue-600 focus:outline-none"></textarea>
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition">Send Message</button>
     </form>
-  </section>
+  </div>
+</section>
 
-  <!-- SOCIAL LINKS -->
-  <section class="text-center mb-16">
-    <p class="text-gray-700 mb-2">Or connect with us on social media:</p>
-    <div class="flex justify-center gap-4">
-      <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a>
-      <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
-    </div>
-  </section>
+<!-- 🌐 SOCIAL LINKS -->
+<section class="text-center mb-16 fade-in">
+  <p class="text-gray-700 mb-4">Or connect with us on social media:</p>
+  <div class="flex justify-center gap-6">
+    <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline font-medium">Instagram</a>
+    <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline font-medium">LinkedIn</a>
+  </div>
+</section>
 
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
-    © 2025 BMA Foundation ·
-    <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> ·
-    <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
-  </footer>
+<!-- 🔚 FOOTER -->
+<footer class="bg-gray-50 border-t py-6 text-center text-sm text-gray-500 fade-in">
+  © 2025 BMA Foundation ·
+  <a href="https://www.instagram.com/thebmafoundation/" target="_blank" class="text-blue-600 hover:underline">Instagram</a> ·
+  <a href="https://www.linkedin.com/company/bmafoundation/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
+</footer>
 
-  <!-- ✅ Inline Script -->
-  <script>
-    // ✅ Mobile Menu Toggle
-    document.getElementById('menu-toggle')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu')?.classList.toggle('hidden');
-    });
+<!-- ✅ SCRIPT -->
+<script>
+  // Mobile menu toggle
+  document.getElementById('menu-toggle')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
 
-    // ✅ Highlight Active Nav Link
-    const links = document.querySelectorAll('header nav a');
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("text-blue-600", "font-semibold");
+  // Highlight active link
+  const links = document.querySelectorAll('header nav a');
+  links.forEach(link => {
+    if(link.href === window.location.href) link.classList.add("text-blue-600", "font-semibold");
+  });
+
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
       }
     });
-  </script>
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 </body>
 </html>

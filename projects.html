@@ -4,142 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | BMA Foundation</title>
+
+  <!-- ✅ Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />  
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .underline-hover { position: relative; }
+    .underline-hover::after {
+      content: "";
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0%; height: 2px;
+      background: #2563eb;
+      transition: width 0.3s ease;
+    }
+    .underline-hover:hover::after { width: 100%; }
   </style>
 </head>
 <body class="bg-gradient-to-b from-white via-blue-50 to-gray-100 text-gray-800">
 
-<!-- 🌐 GLOBAL NAVBAR -->
-<header class="bg-white shadow sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    
-    <!-- 🔹 Logo -->
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto"/>
-      <span class="text-xl sm:text-2xl font-bold text-blue-600">BMA Foundation</span>
-    </a>
-
-    <!-- 🔹 Desktop Menu -->
-    <nav class="hidden md:flex items-center gap-6 text-gray-700 font-medium">
-      <a href="index.html" class="hover:text-blue-600 relative group">
-        Home
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+  <!-- 🌐 NAVBAR -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="BMA Logo" class="h-10 w-auto" />
+        <span class="text-2xl font-bold text-blue-600">BMA Foundation</span>
       </a>
-      <a href="about.html" class="hover:text-blue-600 relative group">
-        About
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="projects.html" class="hover:text-blue-600 relative group">
-        Projects
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="get-involved.html" class="hover:text-blue-600 relative group">
-        Get Involved
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="donate.html" class="hover:text-blue-600 relative group">
-        Donate
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-      <a href="contact.html" class="hover:text-blue-600 relative group">
-        Contact
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-    </nav>
 
-    <!-- 🔹 Mobile Menu Button -->
-    <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-6 text-gray-700 font-medium">
+        <a href="index.html" class="underline-hover">Home</a>
+        <a href="about.html" class="underline-hover">About</a>
+        <a href="projects.html" class="underline-hover">Projects</a>
+        <a href="get-involved.html" class="underline-hover">Get Involved</a>
+        <a href="donate.html" class="underline-hover">Donate</a>
+        <a href="contact.html" class="underline-hover">Contact</a>
+      </nav>
 
-  <!-- 🔹 Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white border-t shadow">
-    <nav class="flex flex-col space-y-3 text-gray-700 font-medium">
-      <a href="index.html" class="hover:text-blue-600">Home</a>
-      <a href="about.html" class="hover:text-blue-600">About</a>
-      <a href="projects.html" class="hover:text-blue-600">Projects</a>
-      <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
-      <a href="donate.html" class="hover:text-blue-600">Donate</a>
-      <a href="contact.html" class="hover:text-blue-600">Contact</a>
-    </nav>
-  </div>
-</header>
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
 
-<!-- ✅ Navbar Script -->
-<script>
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-  });
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white border-t shadow">
+      <nav class="flex flex-col space-y-3 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="projects.html" class="hover:text-blue-600">Projects</a>
+        <a href="get-involved.html" class="hover:text-blue-600">Get Involved</a>
+        <a href="donate.html" class="hover:text-blue-600">Donate</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  // Highlight active link automatically
-  const links = document.querySelectorAll('header nav a');
-  links.forEach(link => {
-    if (link.href === window.location.href) {
-      link.classList.add("text-blue-600", "font-semibold");
-    }
-  });
-</script>
+  <!-- ✅ Navbar Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+    );
+    // Highlight active page
+    document.querySelectorAll('header nav a').forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("text-blue-600", "font-semibold");
+      }
+    });
+  </script>
 
-
-
-  <!-- HERO -->
-  <section class="relative bg-gradient-to-r from-blue-600 to-blue-400 text-white py-24 text-center overflow-hidden">
+  <!-- 🎯 HERO -->
+  <section class="relative bg-gradient-to-r from-blue-600 to-blue-400 text-white py-24 text-center overflow-hidden fade-in">
     <div class="absolute inset-0 bg-[url('assets/pattern.svg')] opacity-10"></div>
     <div class="relative max-w-4xl mx-auto px-4">
-      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Projects & Events</h1>
+      <h1 class="text-5xl font-extrabold mb-4">Projects & Events</h1>
       <p class="text-lg sm:text-xl opacity-90">Explore our fundraising campaigns, volunteer missions, and creative community events that make a difference.</p>
     </div>
   </section>
 
-  <!-- FILTERS -->
-  <section class="py-12 bg-white shadow-sm">
+  <!-- 🔘 FILTERS -->
+  <section class="py-12 bg-white shadow-sm fade-in">
     <div class="max-w-4xl mx-auto px-4 flex flex-wrap gap-3 justify-center">
-      <button data-filter="all" class="filter-btn bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow hover:opacity-90">All</button>
+      <button data-filter="all" class="filter-btn bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow">All</button>
       <button data-filter="fundraiser" class="filter-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-100">Fundraisers</button>
       <button data-filter="volunteer" class="filter-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-100">Volunteering</button>
       <button data-filter="awareness" class="filter-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-100">Awareness</button>
     </div>
   </section>
 
-  <!-- PROJECTS GRID -->
-  <section class="py-16 bg-gray-50">
+  <!-- 🧩 PROJECTS GRID -->
+  <section class="py-16 bg-gray-50 fade-in">
     <div class="max-w-6xl mx-auto px-4 grid gap-10 sm:grid-cols-2 lg:grid-cols-3" id="projects-grid">
 
-  <!-- PROJECT 1 -->
-      
-    <a href="project-cards.html" 
-       class="relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group">
-    
-      <!-- Background Image -->
-      <img src="assets/projects/project1.jpg" 
-           alt="Cards for Kids" 
-           class="w-full h-56 object-cover transform transition duration-500 group-hover:scale-105" />
-    
-      <!-- Semi-transparent background for text -->
-      <div class="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
-        <h3 class="font-bold text-xl text-white">Cards for Hospitalized Kids</h3>
-        <p class="text-sm text-gray-200">
-          Uplifting handmade cards for children with chronic illnesses.
-        </p>
-        <span class="inline-block mt-3 text-xs bg-blue-500 text-white px-3 py-1 rounded-full">
-          Volunteering
-        </span>
-      </div>
-    </a>
-        
-  <!-- PROJECT 2 -->
-      <a href="project-wellness-wall.html" class="project-card awareness fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+      <!-- PROJECT 1 -->
+      <a href="project-cards.html" class="project-card volunteer block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group">
+        <img src="assets/projects/project1.jpg" alt="Cards for Kids" class="w-full h-56 object-cover transform transition duration-500 group-hover:scale-105" />
+        <div class="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
+          <h3 class="font-bold text-xl text-white">Cards for Hospitalized Kids</h3>
+          <p class="text-sm text-gray-200">Uplifting handmade cards for children with chronic illnesses.</p>
+          <span class="inline-block mt-3 text-xs bg-blue-500 text-white px-3 py-1 rounded-full">Volunteering</span>
+        </div>
+      </a>
+
+      <!-- PROJECT 2 -->
+      <a href="project-wellness-wall.html" class="project-card awareness block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group relative">
         <img src="assets/projects/project2.jpg" alt="Wellness Wall" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div class="absolute bottom-4 left-4 right-4 text-white">
@@ -149,7 +129,8 @@
         </div>
       </a>
 
-      <a href="project-winter-drive.html" class="project-card fundraiser fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+      <!-- PROJECT 3 -->
+      <a href="project-winter-drive.html" class="project-card fundraiser block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group relative">
         <img src="assets/projects/project3.jpg" alt="Winter Drive" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div class="absolute bottom-4 left-4 right-4 text-white">
@@ -159,7 +140,8 @@
         </div>
       </a>
 
-      <a href="project-talent-show.html" class="project-card fundraiser fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+      <!-- PROJECT 4 -->
+      <a href="project-talent-show.html" class="project-card fundraiser block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group relative">
         <img src="assets/projects/project4.jpg" alt="Talent Show" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div class="absolute bottom-4 left-4 right-4 text-white">
@@ -169,7 +151,8 @@
         </div>
       </a>
 
-      <a href="project-clothing-drive.html" class="project-card volunteer fade-in group relative block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+      <!-- PROJECT 5 -->
+      <a href="project-clothing-drive.html" class="project-card volunteer block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group relative">
         <img src="assets/projects/project5.jpg" alt="Clothing Drive" class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div class="absolute bottom-4 left-4 right-4 text-white">
@@ -178,12 +161,11 @@
           <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Volunteering</span>
         </div>
       </a>
-
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
-  <section class="relative bg-blue-600 text-white py-20 text-center overflow-hidden">
+  <!-- 💙 CALL TO ACTION -->
+  <section class="relative bg-blue-600 text-white py-20 text-center overflow-hidden fade-in">
     <div class="absolute inset-0 bg-[url('assets/pattern.svg')] opacity-10"></div>
     <div class="relative max-w-3xl mx-auto px-6">
       <h2 class="text-3xl sm:text-4xl font-bold mb-4">Want to get involved?</h2>
@@ -192,13 +174,14 @@
     </div>
   </section>
 
+  <!-- 🦶 FOOTER -->
   <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
     © 2025 BMA Foundation. All rights reserved.
   </footer>
 
+  <!-- ✨ INTERACTIVITY SCRIPT -->
   <script>
-    // Fade-in effect
-    const faders = document.querySelectorAll('.fade-in');
+    // Fade-in observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -206,25 +189,18 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-    faders.forEach(fade => observer.observe(fade));
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // Project filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    const buttons = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.project-card');
-
-    filterBtns.forEach(btn => {
+    buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const filter = btn.getAttribute('data-filter');
-        filterBtns.forEach(b => b.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-blue-500', 'text-white', 'shadow'));
+        const filter = btn.dataset.filter;
+        buttons.forEach(b => b.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-blue-500', 'text-white', 'shadow'));
         btn.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-500', 'text-white', 'shadow');
-        cards.forEach(card => {
-          if (filter === 'all' || card.classList.contains(filter)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        cards.forEach(card => card.style.display = (filter === 'all' || card.classList.contains(filter)) ? 'block' : 'none');
       });
     });
   </script>

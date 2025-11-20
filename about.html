@@ -91,46 +91,98 @@
 </section>
 
 <!-- TIMELINE -->
-<section class="bg-gray-50 py-20 fade-in">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Our Journey</h2>
-    <div class="relative border-l-4 border-blue-600 pl-6 space-y-12">
-      <div>
-        <h3 class="text-xl font-semibold">July 11, 2025 – Foundation Begins</h3>
-        <p class="text-gray-600">Medical students came together to merge studies with service.</p>
+<!-- 🔵 BMA Timeline Section -->
+<section class="bg-white py-20 fade-in">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Our Journey</h2>
+    <p class="text-gray-600 max-w-xl">
+      A look at how BMA Foundation evolved — step by step, project by project.
+    </p>
+  </div>
+
+  <div id="timeline-container" class="max-w-7xl mx-auto relative mt-16 pb-20">
+
+    <!-- Vertical Line -->
+    <div id="timeline-line"
+         class="absolute left-8 md:left-12 top-0 w-[3px] bg-gray-300 rounded-full overflow-hidden">
+      <div id="timeline-progress"
+           class="w-full h-0 bg-gradient-to-b from-blue-600 via-blue-400 to-transparent"></div>
+    </div>
+
+    <!-- TIMELINE ITEM 1 -->
+    <div class="flex gap-12 mb-24">
+      <!-- Sticky Title -->
+      <div class="sticky top-40 h-10 flex items-center">
+        <h3 class="text-2xl md:text-4xl font-bold text-gray-500">2025</h3>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold">October 1, 2025 – Orientation Presentation</h3>
-        <p class="text-gray-600">Met the new 1st years at orientation and shared what BMA Foundation is all about</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold">Future – Scaling Impact</h3>
-        <p class="text-gray-600">Expanding partnerships with communities and creating sustainable change projects.</p>
+
+      <!-- Content -->
+      <div class="pl-6">
+        <div class="w-4 h-4 rounded-full bg-white border-4 border-blue-500 absolute -ml-11 mt-2"></div>
+        <h4 class="text-xl font-semibold mb-2">Foundation Begins</h4>
+        <p class="text-gray-600">
+          Medical students joined forces to create a platform dedicated to creativity, volunteering,  
+          and transparent giving.
+        </p>
       </div>
     </div>
+
+    <!-- TIMELINE ITEM 2 -->
+    <div class="flex gap-12 mb-24">
+      <div class="sticky top-40 h-10 flex items-center">
+        <h3 class="text-2xl md:text-4xl font-bold text-gray-500">2025</h3>
+      </div>
+
+      <div class="pl-6">
+        <div class="w-4 h-4 rounded-full bg-white border-4 border-blue-500 absolute -ml-11 mt-2"></div>
+        <h4 class="text-xl font-semibold mb-2">First Fundraiser</h4>
+        <p class="text-gray-600">
+          Our early creative events set the foundation for long-term community impact.
+        </p>
+      </div>
+    </div>
+
+    <!-- TIMELINE ITEM 3 -->
+    <div class="flex gap-12 mb-24">
+      <div class="sticky top-40 h-10 flex items-center">
+        <h3 class="text-2xl md:text-4xl font-bold text-gray-500">Future</h3>
+      </div>
+
+      <div class="pl-6">
+        <div class="w-4 h-4 rounded-full bg-white border-4 border-blue-500 absolute -ml-11 mt-2"></div>
+        <h4 class="text-xl font-semibold mb-2">Scaling Impact</h4>
+        <p class="text-gray-600">
+          We aim to expand partnerships and establish sustainable community-driven projects.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- CORE VALUES -->
-<section class="bg-white py-20 fade-in">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Our Core Values</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="p-8 rounded-2xl bg-blue-50 shadow hover:shadow-lg transition-transform transform hover:-translate-y-2 text-center fade-in">
-        <h3 class="text-xl font-semibold mb-3">Transparency</h3>
-        <p class="text-gray-600">Every donation is publicly accounted for — always.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-blue-50 shadow hover:shadow-lg transition-transform transform hover:-translate-y-2 text-center fade-in">
-        <h3 class="text-xl font-semibold mb-3">Creativity</h3>
-        <p class="text-gray-600">We address social, medical, and emotional challenges through creative action.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-blue-50 shadow hover:shadow-lg transition-transform transform hover:-translate-y-2 text-center fade-in">
-        <h3 class="text-xl font-semibold mb-3">Community</h3>
-        <p class="text-gray-600">We collaborate with local voices and uplift together.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- 🔵 Timeline Animation Script -->
+<script>
+  const timelineContainer = document.getElementById("timeline-container");
+  const timelineLine = document.getElementById("timeline-line");
+  const timelineProgress = document.getElementById("timeline-progress");
+
+  function animateTimeline() {
+    const rect = timelineContainer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    const start = rect.top - windowHeight * 0.1;
+    const end = rect.bottom - windowHeight * 0.5;
+
+    let progress = (window.scrollY - (window.scrollY + rect.top - windowHeight * 0.1)) / (end - start);
+
+    progress = Math.max(0, Math.min(1, progress));
+
+    timelineProgress.style.height = progress * rect.height + "px";
+  }
+
+  window.addEventListener("scroll", animateTimeline);
+  window.addEventListener("load", animateTimeline);
+</script>
 
 <!-- CTA -->
 <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-16 text-center text-white fade-in">
